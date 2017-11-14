@@ -1,3 +1,4 @@
-Output "my_output"{
+#output "myvpc" {
+# value = "${aws_vpc.main.id}"
+#}
 
-	Value = "my_value" }
