@@ -5,5 +5,5 @@ variable "region" {
 
 variable "mycidr" {
   type    = "string"
-  default = "10.0.1.0/24"
+  default = "10.1.0.0/16"
 }

@@ -1,8 +1,8 @@
-provider aws {}
+provider aws {
+  region="eu-west-1"}
 
 resource "aws_vpc" "main" {
   cidr_block       = "${var.mycidr}"
-  instance_tenancy = "dedicated"
 
   tags {
     Name        = "MyVPC"
@@ -12,12 +12,12 @@ resource "aws_vpc" "main" {
 
 resource "aws_subnet" "mysubnet1" {
   vpc_id            = "${aws_vpc.main.id}"
-  availability_zone = "us-west-1a"
+  availability_zone = "eu-west-1a"
   cidr_block        = "10.1.1.0/24"
 }
 resource "aws_subnet" "mysubnet2" {
   vpc_id            = "${aws_vpc.main.id}"
-  availability_zone = "us-west-1a"
+  availability_zone = "eu-west-1b"
   cidr_block        = "10.1.10.0/24"
   map_public_ip_on_launch = true
 }
